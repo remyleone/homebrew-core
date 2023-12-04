@@ -87,7 +87,7 @@ class Awscli < Formula
   end
 
   def python3
-    which("python3.11")
+    which("python3.12")
   end
 
   def install
