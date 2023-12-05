@@ -19,7 +19,7 @@ class ApacheSpark < Formula
     sha256 cellar: :any_skip_relocation, all: "86def33303bb1a5c1b9dd388c50889402405166988a9376c94cb547e089c624b"
   end
 
-  depends_on "openjdk@17"
+  depends_on "openjdk@21"
 
   def install
     # Rename beeline to distinguish it from hive's beeline
@@ -28,7 +28,7 @@ class ApacheSpark < Formula
     rm_f Dir["bin/*.cmd"]
     libexec.install Dir["*"]
     bin.install Dir[libexec/"bin/*"]
-    bin.env_script_all_files(libexec/"bin", JAVA_HOME: Language::Java.overridable_java_home_env("17")[:JAVA_HOME])
+    bin.env_script_all_files(libexec/"bin", JAVA_HOME: Language::Java.overridable_java_home_env("21")[:JAVA_HOME])
   end
 
   test do
